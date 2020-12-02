@@ -5,6 +5,10 @@ RUN apt-get install maven -y
 COPY . .
 #Build jar
 RUN mvn package
-RUN pwd
+
+RUN ls
+WORKDIR target
+RUN ls
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","./target/DockerTest-0.0.1-SNAPSHOT.jar"]  
+ENTRYPOINT ["java","-jar","DockerTest-0.0.1-SNAPSHOT.jar"]  
