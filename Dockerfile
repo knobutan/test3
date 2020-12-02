@@ -6,7 +6,7 @@ COPY . .
 RUN mvn package
 
 # Copy the exe into a smaller base image
-FROM openjdk:11-jdk-slim
+# FROM openjdk:11-jdk-slim
 RUN ls
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/target/DockerTest-0.0.1-SNAPSHOT.jar "]  
