@@ -1,7 +1,6 @@
 #Build springboot jar file
-FROM 3.6.3-jdk-11
-COPY pom.xml /
-COPY /scr /src
+FROM openjdk:11-jdk
+COPY . .
 RUN mvn package
 
 # Copy the exe into a smaller base image
